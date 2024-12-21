@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form login-form" id="loginForm">
+            <h2>Вход</h2>
+            <form>
+                <input type="text" placeholder="Имя пользователя" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            <p class="toggle-form">У вас нет аккаунта? <a href="#" id="showRegister">Зарегистрируйтесь</a></p>
+        </div>
+        <div class="form registration-form" id="registerForm" style="display: none;">
+            <h2>Регистрация</h2>
+            <form>
+                <input type="text" placeholder="Имя пользователя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <p class="toggle-form">Уже есть аккаунт? <a href="#" id="showLogin">Войдите</a></p>
+        </div>
+    </div>
+    <script >
+        document.getElementById("showRegister").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+        });
+
+        document.getElementById("showLogin").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        });
+
+    </script>
+</body>
+</html>
